@@ -15,7 +15,7 @@ dataset = pd.read_csv('iris.csv')
 
 # Feature names (Ensure no extra spaces or parentheses)
 dataset.columns = [colname.strip(' (cm)').replace(" ", "_") for colname in dataset.columns.tolist()]
-features_names = dataset.columns.tolist()[:4]
+features_names = dataset.columns.tolist()[:4]    
 
 # Feature Engineering
 dataset['sepal_length_width_ratio'] = dataset['sepal_length'] / dataset['sepal_width']
@@ -135,5 +135,6 @@ with open('scores.txt', "w") as score:
     score.write("F1 Score: %2.1f%%\n" % f1_lr)
     score.write("Recall Score: %2.1f%%\n" % recall_lr)
     score.write("Precision Score: %2.1f%%\n" % prec_lr)
+
 
 
